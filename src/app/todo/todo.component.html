@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <form class="form-inline" #todoForm="ngForm" (submit)="todoSubmit(todoForm.value);">
+        <div class="form-group">
+            <div class="input-group-prepend">
+                <input type="text" #todo class="form-control" placeholder="Add Todo" name="todo" ngModel>
+                &nbsp;
+                <span class="input-group-text" (click)="addTodo(todo.value)" style="cursor: pointer;">Add</span>
+            </div>
+        </div>
+        <br>
+        <div class="data clearfix">
+            <ul class="list-group shipping-item" *ngFor="let todo of todoArray ">
+                <li class="list-group-item"> {{todo}}
+                    <span class="pull-right" style="cursor: pointer;" (click)="deleteItem($event,todo)">delete</span>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

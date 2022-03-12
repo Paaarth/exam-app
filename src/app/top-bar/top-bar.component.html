@@ -1,0 +1,25 @@
+<nav class="navbar navbar-inverse navbar-fixed-top ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" routerLink="/" href="javascript:void(0)">Application</a>
+        </div>
+        <ul class="nav navbar-nav" routerLinkActive="active" *ngIf="!currentUser">
+            <li><a routerLink="/about" href="javascript:void(0)">About</a></li>
+            <li><a routerLink="/todo" href="javascript:void(0)">To Do</a></li>
+        </ul>
+        <ul class="nav navbar-nav" routerLinkActive="active" *ngIf="currentUser">
+            <li><a routerLink="/about" href="javascript:void(0)">About</a></li>
+            <li><a routerLink="/todo" href="javascript:void(0)">To Do</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" *ngIf="currentUser">
+            <li><a (click)="logout()" href="javascript:void(0)"><span routerLink="login"
+                        class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" *ngIf="!currentUser">
+            <li><a routerLink="/register" href="javascript:void(0)"><span class="glyphicon glyphicon-user"></span> Sign
+                    Up</a></li>
+            <li><a routerLink="/login" href="javascript:void(0)"><span class="glyphicon glyphicon-log-in"></span>
+                    Login</a></li>
+        </ul>
+    </div>
+</nav>
